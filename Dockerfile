@@ -1,25 +1,16 @@
-FROM jonathonf/manjaro:latest
+FROM yantis/wine:latest
 MAINTAINER Rob Eastham <rob.eastham@clearview.net>
-
-#########################################
-##        ENVIRONMENTAL CONFIG         ##
-#########################################
-# Set correct environment variables
-ENV HOME="/root" LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
-
-# Use baseimage-docker's init system
-CMD ["/sbin/my_init"]
 
 #########################################
 ##         RUN INSTALL                 ##
 #########################################
 RUN pacman --noconfirm -Sy archlinux-keyring
-RUN pacman --noconfirm -Su gcc git openssh
 RUN pacman --noconfirm -Syu
 CMD ["echo 'Hello this is an echo echo echo...''"]
 
 #########################################
 ##         EXPORTS AND VOLUMES         ##
 #########################################
-VOLUME /manjaro1
-EXPOSE 1234/tcp 1234
+# VOLUME /manjaro1
+EXPOSE 5900/tcp 5900
+EXPOSE 5901/tcp 5901
