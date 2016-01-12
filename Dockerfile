@@ -13,9 +13,9 @@ CMD ["/sbin/my_init"]
 #########################################
 ##         RUN INSTALL                 ##
 #########################################
-RUN sudo pacman --noconfirm -Sy archlinux-keyring
-RUN sudo pacman --noconfirm -Su gcc git openssh
-RUN sudo pacman --noconfirm -Syu
+RUN pacman --noconfirm -Sy archlinux-keyring
+RUN pacman --noconfirm -Su gcc git openssh
+RUN pacman --noconfirm -Syu
 CMD ["echo 'Hello this is an echo echo echo...''"]
 
 #########################################
