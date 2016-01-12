@@ -1,4 +1,4 @@
-FROM jonathonf/manjaro
+FROM jonathonf/manjaro:latest
 MAINTAINER Rob Eastham <rob.eastham@clearview.net>
 
 #########################################
