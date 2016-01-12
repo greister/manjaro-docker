@@ -1,9 +1,3 @@
-RUN sudo pacman --noconfirm -Sy archlinux-keyring
-RUN sudo pacman --noconfirm -Su gcc git openssh
-RUN sudo pacman --noconfirm -Syu
-CMD ["echo 'Hell this is an echo echo echo...''"]
-
-
 FROM jonathonf/manjaro
 MAINTAINER Rob Eastham <rob.eastham@clearview.net>
 
@@ -28,4 +22,4 @@ CMD ["echo 'Hello this is an echo echo echo...''"]
 ##         EXPORTS AND VOLUMES         ##
 #########################################
 VOLUME /manjaro1
-# EXPOSE 1234/tcp 1234 4321
+EXPOSE 1234/tcp 1234
