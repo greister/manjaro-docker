@@ -20,4 +20,6 @@ CMD ["echo 'Hello this is an echo echo echo...''"]
 ##         EXPORTS AND VOLUMES         ##
 #########################################
 VOLUME /manjaro1
-EXPOSE 9000/tcp 9001
+EXPOSE 9000/tcp 9000
+EXPOSE 9001/tcp 9001
+EXPOSE 22/tcp 49155
