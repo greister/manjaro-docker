@@ -5,7 +5,7 @@ MAINTAINER Rob Eastham <rob.eastham@clearview.net>
 ##        ENVIRONMENTAL CONFIG         ##
 #########################################
 # Set correct environment variables
-ENV HOME="/root" LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
+# ENV HOME="/root" LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
 
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
@@ -15,7 +15,7 @@ CMD ["/sbin/my_init"]
 #########################################
 RUN pacman-mirrors -g
 RUN pacman --noconfirm -Syy
-RUN pacman-key --init
+RUN pacman --noconfirm -S gnupg
 RUN pacman-key populate archlinux
 RUN pacman-key populate manjaro
 RUN pacman-key --refresh-keys
