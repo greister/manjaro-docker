@@ -14,11 +14,11 @@ CMD ["/sbin/my_init"]
 ##         RUN INSTALL                 ##
 #########################################
 RUN pacman-mirrors -g
-RUN pacman --noconfirm -Syy
+RUN pacman-key --refresh-keys
+RUN pacman --noconfirm -Syyu
 RUN pacman --noconfirm -S gnupg
 RUN pacman-key populate archlinux
 RUN pacman-key populate manjaro
-RUN pacman-key --refresh-keys
 RUN pacman --noconfirm -Syyu
 CMD ["echo 'Hello this is an echo echo echo...''"]
 
