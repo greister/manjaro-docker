@@ -14,6 +14,8 @@ CMD ["/sbin/my_init"]
 ##         RUN INSTALL                 ##
 #########################################
 RUN pacman-mirrors -g
+RUN mkdir /root/.gnupg
+RUN touch /root/.gnupg/drmngr_ldapservers.conf
 RUN dirmngr < /dev/null
 RUN pacman-key --refresh-keys
 RUN pacman --noconfirm -Syyu
