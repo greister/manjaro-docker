@@ -14,6 +14,7 @@ CMD ["/sbin/my_init"]
 ##         RUN INSTALL                 ##
 #########################################
 RUN pacman-mirrors -g
+RUN dirmngr < /dev/null
 RUN pacman-key --refresh-keys
 RUN pacman --noconfirm -Syyu
 RUN pacman --noconfirm -S gnupg
